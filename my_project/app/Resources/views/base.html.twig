@@ -2,12 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>Mon projet - {% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+
+        <!-- Liens CSS / font-awesome -->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+        <link rel="steelsheet" href="{{ asset('css/globalStyle.css') }}" />
     </head>
     <body>
+        {% block nav %} {% include '::nav.html.twig' %} {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     </body>
 </html>
